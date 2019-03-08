@@ -7,12 +7,13 @@
 class Reflector
 {
 public:
+	Reflector();
 	Reflector(const std::string& name, const std::string&);
 	~Reflector();
 	char convert(char c) const;
 
 private:
-	const std::string name;
-	const std::string wiring;
+	std::string name;
+	std::string wiring;
 };
 

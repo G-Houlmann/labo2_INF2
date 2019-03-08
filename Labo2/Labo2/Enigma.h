@@ -14,9 +14,7 @@ public:
 	~Enigma();
 	char decode(char c) const;
 	std::string decode(std::string s) const;
-	void setRightRotor(Rotor Rotor);
-	void setMiddleRotor(Rotor Rotor);
-	void setLeftRotor(Rotor Rotor);
+	void setRotor(Rotor Rotor, unsigned position);
 	void setReflector(Reflector reflector);
 
 private:
