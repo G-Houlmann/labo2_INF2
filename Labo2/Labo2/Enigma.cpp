@@ -13,14 +13,27 @@ Enigma::~Enigma()
 {
 }
 
+const unsigned ROTORS_AMOUNT = 3;
+
 char Enigma::decode(char c) const {
-	c = toupper(c);
-	return 'a';
+	char newC = toupper(c);
+	size_t i = 0;
+	for (; i < ROTORS_AMOUNT; ++i) {
+		//Aller des rotors
+	}
+	newC = reflector.convert(newC);
+	for (; i >= 0; --i) {
+		//Retour des rotors
+	}
+	return newC;
 }
 
 std::string Enigma::decode(std::string s) const {
 	transform(s.begin(), s.end(), s.begin(), ::toupper);
-
+	string newS = "";
+	for (size_t i = 0; i < s.size(); ++i) {
+		newS[i] = decode(s[i]);
+	}
 	return s;
 }
 

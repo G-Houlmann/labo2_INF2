@@ -14,5 +14,5 @@ Reflector::~Reflector()
 }
 
 char Reflector::convert(char c) const {
-	return 'A';
+	return this->wiring[c - 65];
 }
