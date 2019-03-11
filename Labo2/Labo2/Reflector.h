@@ -11,9 +11,10 @@ public:
 	Reflector(const std::string& name, const std::string&);
 	~Reflector();
 	char convert(char c) const;
+	Reflector& operator=(const Reflector& reflector);
 
 private:
-	std::string name;
-	std::string wiring;
+	const std::string name;
+	const std::string wiring;
 };
 

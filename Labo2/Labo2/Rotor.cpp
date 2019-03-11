@@ -16,7 +16,7 @@ char Rotor::rToL(char c) {
 }
 
 char Rotor::lToR(char c) {
-	return c;
+	return wiring.at((position - c - 65) % 26);
 }
 
 void Rotor::rotation(std::string currentWiring)

@@ -20,11 +20,11 @@ char Enigma::decode(char c) const {
 	size_t i = 0;
 
 	for (; i < ROTORS_AMOUNT; ++i) {
-		//Aller des rotors
+		//Aller des rotors et rotation
 	}
 	newC = reflector.convert(newC);
 	for (; i >= 0; --i) {
-		//Retour des rotors
+		//Retour des rotors et rotation
 	}
 	return newC;
 }
