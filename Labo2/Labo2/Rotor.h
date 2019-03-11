@@ -9,17 +9,17 @@ class Rotor
 public:
 	Rotor();
 	Rotor(const unsigned id, const char notch, const std::string wiring, char position);
-	void rotation(std::string currentWiring);
 	char rToL(char c);
 	char lToR(char c);
+	void rotation();
 	Rotor& operator=(const Rotor& rotor);
 	~Rotor();
 
 private:
 	const unsigned id;
-	const char notch;
+	const unsigned notch;
 	const std::string wiring;
-	int position;
+	unsigned position;
 };
 
 #endif //ROTOR_H
