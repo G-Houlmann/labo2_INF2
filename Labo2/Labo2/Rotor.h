@@ -7,18 +7,18 @@
 class Rotor
 {
 public:
-	Rotor(unsigned id, const char notch, const std::string baseWiring);
+	Rotor();
+	Rotor(const unsigned id, const char notch, const std::string wiring, char position);
 	void rotation(std::string currentWiring);
 	char rToL(char c);
 	char lToR(char c);
-	void setCurrentWiring(std::string baseWiring, unsigned nextPos);
+	Rotor& operator=(const Rotor& rotor);
 	~Rotor();
 
 private:
 	const unsigned id;
 	const char notch;
-	const std::string baseWiring;
-	std::string currentWiring;
+	const std::string wiring;
 	int position;
 };
 

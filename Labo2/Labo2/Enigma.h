@@ -14,11 +14,11 @@ public:
 	~Enigma();
 	char decode(char c) const;
 	std::string decode(std::string s) const;
-	void setRotor(Rotor Rotor, unsigned position);
+	void setRotor(Rotor rotor, unsigned position);
 	void setReflector(Reflector reflector);
 
 private:
-	Rotor rotors[3];
+	Rotor* rotors[3];
 	Reflector reflector;
 };
 

@@ -18,6 +18,7 @@ const unsigned ROTORS_AMOUNT = 3;
 char Enigma::decode(char c) const {
 	char newC = toupper(c);
 	size_t i = 0;
+
 	for (; i < ROTORS_AMOUNT; ++i) {
 		//Aller des rotors
 	}
@@ -37,8 +38,9 @@ std::string Enigma::decode(std::string s) const {
 	return s;
 }
 
+//TODO faire passer uniquement l'adresse du rotor
 void Enigma::setRotor(Rotor rotor, unsigned position) {
-	rotors[position] = rotor;
+	rotors[position] = &rotor;
 }
 
 void Enigma::setReflector(Reflector reflector) {
