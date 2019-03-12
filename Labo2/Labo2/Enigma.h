@@ -10,7 +10,7 @@
 class Enigma
 {
 public:
-	Enigma(/*const Rotor& rightRotor, const Rotor& middleRotor, const Rotor& leftRotor, const Reflector& reflector*/);
+	Enigma(const Rotor& leftRotor, const Rotor& middleRotor, const Rotor& rightRotor, const Reflector& reflector);
 	~Enigma();
 	char decode(char c);
 	std::string decode(std::string s);

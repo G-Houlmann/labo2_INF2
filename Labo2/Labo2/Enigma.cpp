@@ -1,12 +1,15 @@
 #include "Enigma.h"
 #include <algorithm>
 #include <cctype>
-#include <iostream> // pour tests
+#include <iostream>
 
 using namespace std;
 
-Enigma::Enigma()
+Enigma::Enigma(const Rotor& leftRotor, const Rotor& middleRotor, const Rotor& rightRotor, const Reflector& reflector) : reflector(reflector)
 {
+	rotors[0] = rightRotor;
+	rotors[1] = middleRotor;
+	rotors[2] = leftRotor;
 }
 
 
