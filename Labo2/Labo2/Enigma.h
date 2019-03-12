@@ -10,15 +10,18 @@
 class Enigma
 {
 public:
-	Enigma();
+	Enigma(/*const Rotor& rightRotor, const Rotor& middleRotor, const Rotor& leftRotor, const Reflector& reflector*/);
 	~Enigma();
-	char decode(char c) const;
-	std::string decode(std::string s) const;
-	void setRotor(Rotor rotor, unsigned position);
+	char decode(char c);
+	std::string decode(std::string s);
+	void setRotor(const Rotor& rotor, unsigned position);
 	void setReflector(Reflector reflector);
 
 private:
-	Rotor* rotors[3];
+	Rotor rotors[3];
+	//Rotor rightRotor;
+	//Rotor middleRotor;
+	//Rotor leftRotor;
 	Reflector reflector;
 };
 
