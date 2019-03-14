@@ -5,7 +5,7 @@
  Auteur(s)   : LAMRANI Soulaymane, HOULMANN Gildas
  Date        : 14.03.2019
 
-But          : Permet de crï¿½er et de gï¿½rer une machine Enigma pour dï¿½coder 
+But          : Permet de créer et de gérer une machine Enigma pour décoder 
 			   des messages.
 
  Remarque(s) :
@@ -29,13 +29,12 @@ public:
                const Rotor& rightRotor, const Reflector& reflector);
 	~Enigma();
 
-	// DÃ©chiffre un caractÃ¨re. 
-	// Le bool b permet l'affichage du "dÃ©bug", il est reprit du decode de 
-        //string
+	// Déchiffre un caractère. 
+	// Le bool b permet l'affichage du "debug", il est repris du decode(string)
 	char decode(char c, bool b);
 
-	// DÃ©chiffre une chaÃ®ne caractÃ¨re par caractÃ¨re. 
-	// Le bool b permet l'affichage du "dÃ©bug"
+	// Déchiffre une chaîne caractère par caractère. 
+	// Le bool b permet l'affichage du "debug"
 	std::string decode(const std::string& s, bool b);
 
 	//Position: 0 = right, 1 = middle, 2 = left

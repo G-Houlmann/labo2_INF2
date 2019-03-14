@@ -5,7 +5,7 @@
  Auteur(s)   : LAMRANI Soulaymane, HOULMANN Gildas
  Date        : 14.03.2019
 
-But          : Permet de cr�er et de g�rer un rotor convertissant une lettre en 
+But          : Permet de créer et de gérer un rotor convertissant une lettre en 
        	       une autre. Permet aussi de tourner un rotor et d'indiquer 
  *             si le prochain rotor doit tourner en fonction du Notch.
 
