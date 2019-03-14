@@ -14,6 +14,10 @@ But          : Fichier source de Reflector.h
  */
 
 #include "Reflector.h"
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
 
 const int CHAR_SHIFT = 65;
 
@@ -39,6 +43,16 @@ Reflector& Reflector::operator=(const Reflector& reflector) {
 	return *this;
 }
 
-char Reflector::convert(char c) const {
-	return this->wiring[c - CHAR_SHIFT];
+char Reflector::convert(char c, bool b) const {
+	char newC = this->wiring[c - CHAR_SHIFT];
+
+	if (b) {
+		const unsigned SHIFT = 10;
+		const string ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		cout << "reflector" << endl
+			<< setw(SHIFT) << left << "entry" << ": " << ALPHABET << endl
+			<< setw(SHIFT) << left << "wiring" << ": " << wiring << endl
+			<< setw(SHIFT) << left << "result" << ": " << newC << "<=" << c << endl << endl;
+	}
+	return newC;
 }

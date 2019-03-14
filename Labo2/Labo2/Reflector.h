@@ -26,7 +26,7 @@ public:
 	Reflector();
 	Reflector(const std::string& name, const std::string&);
 	~Reflector();
-	char convert(char c) const;
+	char convert(char c, bool b) const;
 	Reflector& operator=(const Reflector& reflector);
 
 private:

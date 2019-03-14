@@ -26,6 +26,9 @@ Enigma::Enigma(const Rotor& leftRotor, const Rotor& middleRotor,
 	rotors[0] = rightRotor;
 	rotors[1] = middleRotor;
 	rotors[2] = leftRotor;
+
+	cout << "----------------------------" << endl << "Enigma machine - Transmitter"
+		<< endl << "----------------------------" << endl;
 	string positions[] = { "LEFT", "MIDDLE", "RIGHT" };
 	for (size_t i = 0; i < ROTORS_AMOUNT; ++i) {
 		rotors[i].displayRotor(positions[i]);
