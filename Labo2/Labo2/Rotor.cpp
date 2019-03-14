@@ -30,8 +30,10 @@ void Rotor::displayRotor(string positionInMachine) const {
 		<< positionInMachine << " rotor" << endl 
 		<< setw(DISPLAY_SHIFT) << left << "Rotor id" << ":" << id << endl
 		<< setw(DISPLAY_SHIFT) << left << "wiring" << ":" << wiring << endl
-		<< setw(DISPLAY_SHIFT) << left << "position" << ":" << char(position + CHAR_SHIFT) << endl
-		<< setw(DISPLAY_SHIFT) << left << "notch"  << ":" << char(notch + CHAR_SHIFT) << endl << endl;
+		<< setw(DISPLAY_SHIFT) << left << "position" << ":" 
+                << char(position + CHAR_SHIFT) << endl
+		<< setw(DISPLAY_SHIFT) << left << "notch"  << ":" 
+                << char(notch + CHAR_SHIFT) << endl << endl;
 }
 
 Rotor::Rotor() : id(0), notch('a'), wiring(""), position(0){
@@ -40,20 +42,23 @@ Rotor::Rotor() : id(0), notch('a'), wiring(""), position(0){
 
 Rotor::Rotor(const unsigned id, const char notch, const std::string wiring, 
         char position) : id(id), 
-		notch((unsigned)toupper(notch) - (unsigned)CHAR_SHIFT), wiring(wiring)
+         notch((unsigned)toupper(notch) - (unsigned)CHAR_SHIFT), wiring(wiring)
 {
 	this->position = (unsigned)toupper(position) - (unsigned)CHAR_SHIFT;
 		 
 } 
 
 char Rotor::rToL(char c, bool b) {
-	char newChar = wiring.at((position + (unsigned)c - (unsigned)CHAR_SHIFT) % ALPHABET_LENGTH);
+	char newChar = wiring.at((position + (unsigned)c - 
+                      (unsigned)CHAR_SHIFT) % ALPHABET_LENGTH);
 
     if (b) {
-        cout << setw(DISPLAY_SHIFT) << left << "rotor" << ": " << id << " (pos " << (char)(position + CHAR_SHIFT) << ")" << endl
+        cout << setw(DISPLAY_SHIFT) << left << "rotor" << ": " << id << " (pos " 
+             << (char)(position + CHAR_SHIFT) << ")" << endl
              << setw(DISPLAY_SHIFT) << left << "entry" << ": " << ALPHABET << endl
              << setw(DISPLAY_SHIFT) << left << "wiring" << ": " << wiring << endl
-             << setw(DISPLAY_SHIFT) << left << "result" << ": " << newChar << "<=" << c << endl << endl;
+             << setw(DISPLAY_SHIFT) << left << "result" << ": " << newChar << "<="
+             << c << endl << endl;
     }
 
 	return newChar;
@@ -67,10 +72,12 @@ char Rotor::lToR(char c, bool b) {
 	char newChar =  c + CHAR_SHIFT;
 
 	if (b) {
-        cout << setw(DISPLAY_SHIFT) << left << "rotor" << ": " << id << " (pos " << (char)(position + CHAR_SHIFT) << ")" << endl
+        cout << setw(DISPLAY_SHIFT) << left << "rotor" << ": " << id << " (pos " 
+             << (char)(position + CHAR_SHIFT) << ")" << endl
              << setw(DISPLAY_SHIFT) << left << "entry" << ": " << ALPHABET << endl
              << setw(DISPLAY_SHIFT) << left << "wiring" << ": " << wiring << endl
-             << setw(DISPLAY_SHIFT) << left << "result" << ": " << oldC << "=>" << newChar << endl << endl;
+             << setw(DISPLAY_SHIFT) << left << "result" << ": " << oldC << "=>" 
+             << newChar << endl << endl;
 	}
 
 	return newChar;

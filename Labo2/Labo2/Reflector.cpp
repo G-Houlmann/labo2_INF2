@@ -59,7 +59,8 @@ char Reflector::convert(char c, bool b) const {
 		cout << "reflector" << endl
 			<< setw(SHIFT) << left << "entry" << ": " << ALPHABET << endl
 			<< setw(SHIFT) << left << "wiring" << ": " << wiring << endl
-			<< setw(SHIFT) << left << "result" << ": " << newC << "<=" << c << endl << endl;
+			<< setw(SHIFT) << left << "result" << ": " << newC << "<=" 
+                        << c << endl << endl;
 	}
 	return newC;
 }
