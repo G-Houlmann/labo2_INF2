@@ -1,17 +1,30 @@
+/*
+ -----------------------------------------------------------------------------------
+ Laboratoire : 02
+ Fichier     : Enigma.cpp
+ Auteur(s)   : LAMRANI Soulaymane, HOULMANN Gildas
+ Date        : 14.03.2019
+
+But          : Ficher source de Enigma.h
+
+ Remarque(s) :
+
+ Compilateur : g++ 6.3
+ -----------------------------------------------------------------------------------
+ */
+
 #include "Enigma.h"
-#include <algorithm>
-#include <cctype>
 #include <iostream>
 
 using namespace std;
 
-Enigma::Enigma(const Rotor& leftRotor, const Rotor& middleRotor, const Rotor& rightRotor, const Reflector& reflector) : reflector(reflector)
+Enigma::Enigma(const Rotor& leftRotor, const Rotor& middleRotor, 
+        const Rotor& rightRotor, const Reflector& reflector) : reflector(reflector)
 {
 	rotors[0] = rightRotor;
 	rotors[1] = middleRotor;
 	rotors[2] = leftRotor;
 }
-
 
 Enigma::~Enigma()
 {
@@ -41,15 +54,12 @@ char Enigma::decode(char c) {
 	return c;
 }
 
-std::string Enigma::decode(std::string s) {
-	transform(s.begin(), s.end(), s.begin(), ::toupper);
-	string newS = s;
+std::string Enigma::decode(const std::string& s) {
+	string newS = s; //New string containing decoded message
 
 	//Decoding char by char
-	char c;
 	for (size_t i = 0; i < s.size(); ++i) {
-		c = s[i];
-		newS[i] = this->decode(c);
+		newS[i] = this->decode(s[i]);
 	}
 	return newS;
 }
