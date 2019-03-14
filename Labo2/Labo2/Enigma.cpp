@@ -33,6 +33,7 @@ Enigma::Enigma(const Rotor& leftRotor, const Rotor& middleRotor,
 	for (size_t i = 0; i < ROTORS_AMOUNT; ++i) {
 		rotors[i].displayRotor(positions[i]);
 	}
+	reflector.displayReflector();
 }
 
 Enigma::~Enigma()
@@ -53,7 +54,7 @@ char Enigma::decode(char c, bool b) {
 		c = rotors[i].rToL(c, b);
 	}
 	//Going through reflector
-	c = reflector.convert(c);
+	c = reflector.convert(c, b);
 	//Going through the rotors from right to left (last to 0)
 	for (size_t i = ROTORS_AMOUNT; i > 0; --i) {
 		c = rotors[i-1].lToR(c, b);
@@ -67,6 +68,7 @@ std::string Enigma::decode(const std::string& s, bool b) {
 	//Decoding char by char
 	for (size_t i = 0; i < s.size(); ++i) {
 		newS[i] = this->decode(s[i], b);
+		if (b) cout << "---------------NEW LETTER---------------" << endl;
 	}
 	return newS;
 }

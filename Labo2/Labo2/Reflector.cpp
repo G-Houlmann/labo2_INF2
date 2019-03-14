@@ -35,6 +35,13 @@ Reflector::~Reflector()
 {
 }
 
+void Reflector::displayReflector() const {
+	const unsigned SHIFT = 10;
+	cout << "Reflector" << endl
+		<< setw(SHIFT) << left << "reflector" << ":" << name << endl
+		<< setw(SHIFT) << left << "wiring" << ":" << wiring << endl << endl;
+}
+
 Reflector& Reflector::operator=(const Reflector& reflector) {
 	if (this != &reflector) {
 		(std::string&)name = reflector.name;

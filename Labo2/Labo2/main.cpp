@@ -38,7 +38,7 @@ int main() {
 
 	//Decoding the code
 	string code = "MDXMDAORNSLZBJTCDSABGHLVWA";
-	cout << EnigmaMachine.decode(code, false) << endl;
+	cout << EnigmaMachine.decode(code, true) << endl;
 
 	system("PAUSE");
 	return 0;
