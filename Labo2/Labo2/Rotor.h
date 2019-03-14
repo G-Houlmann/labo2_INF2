@@ -36,6 +36,8 @@ public:
 	bool rotation();
 
 	Rotor& operator=(const Rotor& rotor);
+
+	void displayRotor(std::string positionInMachine) const;
 	~Rotor();
 
 private:

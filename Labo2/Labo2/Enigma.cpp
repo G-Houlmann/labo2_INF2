@@ -18,19 +18,23 @@ But          : Ficher source de Enigma.h
 
 using namespace std;
 
+const unsigned ROTORS_AMOUNT = 3;
+
 Enigma::Enigma(const Rotor& leftRotor, const Rotor& middleRotor, 
         const Rotor& rightRotor, const Reflector& reflector) : reflector(reflector)
 {
 	rotors[0] = rightRotor;
 	rotors[1] = middleRotor;
 	rotors[2] = leftRotor;
+	string positions[] = { "LEFT", "MIDDLE", "RIGHT" };
+	for (size_t i = 0; i < ROTORS_AMOUNT; ++i) {
+		rotors[i].displayRotor(positions[i]);
+	}
 }
 
 Enigma::~Enigma()
 {
 }
-
-const unsigned ROTORS_AMOUNT = 3;
 
 char Enigma::decode(char c) {
 	c = toupper(c);
