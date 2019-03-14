@@ -29,7 +29,12 @@ public:
                const Rotor& rightRotor, const Reflector& reflector);
 	~Enigma();
 
+	// Déchiffre un caractère. 
+	// Le bool b permet l'affichage du "débug", il est reprit du decode de string
 	char decode(char c, bool b);
+
+	// Déchiffre une chaîne caractère par caractère. 
+	// Le bool b permet l'affichage du "débug"
 	std::string decode(const std::string& s, bool b);
 
 	//Position: 0 = right, 1 = middle, 2 = left
