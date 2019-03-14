@@ -29,8 +29,8 @@ public:
                const Rotor& rightRotor, const Reflector& reflector);
 	~Enigma();
 
-	char decode(char c);
-	std::string decode(const std::string& s);
+	char decode(char c, bool b);
+	std::string decode(const std::string& s, bool b);
 
 	//Position: 0 = right, 1 = middle, 2 = left
 	void setRotor(const Rotor& rotor, unsigned position);
