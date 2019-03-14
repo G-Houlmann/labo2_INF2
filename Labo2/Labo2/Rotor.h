@@ -28,8 +28,8 @@ public:
 	Rotor(const unsigned id, const char notch, const std::string wiring, 
               char position);
 
-	char rToL(char c); // Go through the rotor from the right to the left
-	char lToR(char c); // Go through the rotor from the left to the right
+	char rToL(char c, bool b); // Go through the rotor from the right to the left
+	char lToR(char c, bool b); // Go through the rotor from the left to the right
 
 	//Rotate the wiring by 1 to the right.
 	//Returns if the next rotor should rotate or not

@@ -47,13 +47,13 @@ char Enigma::decode(char c) {
 	}
 	//Going through the rotors from left to right (0 to last)
 	for (size_t i = 0; i < ROTORS_AMOUNT; ++i) {
-		c = rotors[i].rToL(c);
+		c = rotors[i].rToL(c, true);
 	}
 	//Going through reflector
 	c = reflector.convert(c);
 	//Going through the rotors from right to left (last to 0)
 	for (size_t i = ROTORS_AMOUNT; i > 0; --i) {
-		c = rotors[i-1].lToR(c);
+		c = rotors[i-1].lToR(c, true);
 	}
 	return c;
 }
